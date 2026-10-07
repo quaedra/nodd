@@ -1,7 +1,7 @@
 {
   "name": "@nodd/node",
   "version": "0.2.0",
-  "description": "Run nodd task-specific classifiers in Node (transformers.js on onnxruntime-node, native CPU).",
+  "description": "Run Nodd task-specific classifiers in Node (transformers.js on onnxruntime-node, native CPU).",
   "type": "module",
   "exports": {
     ".": {

@@ -85,7 +85,7 @@ function Model() {
 
   return (
     <Layout page="model">
-      <title>{m ? `nodd · ${title(m.task)}` : "nodd · Model"}</title>
+      <title>{m ? `${title(m.task)} · Nodd · Quaedra Research` : "Model · Nodd · Quaedra Research"}</title>
       <p><a href={page("models")}>← Models</a></p>
       {m ? (
         <>

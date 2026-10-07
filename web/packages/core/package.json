@@ -1,7 +1,7 @@
 {
   "name": "@nodd/core",
   "version": "0.2.0",
-  "description": "The nodd model format, Decision type and decision logic shared by @nodd/browser and @nodd/node.",
+  "description": "The Nodd model format, Decision type and decision logic shared by @nodd/browser and @nodd/node.",
   "type": "module",
   "exports": {
     ".": {

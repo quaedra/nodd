@@ -1,6 +1,6 @@
-# CLAUDE.md — nodd
+# CLAUDE.md — Nodd
 
-**nodd** (formerly microdecide): a framework that turns a Jev-style task spec
+**Nodd** (formerly microdecide): a framework that turns a Jev-style task spec
 (input + fixed set of typed outputs) into a tiny, fast, calibrated model
 trained for that one use case, that **runs in the browser** (WASM/WebGPU),
 with automatic escalation to a bigger "teacher" model when it is unsure.

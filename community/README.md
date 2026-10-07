@@ -1,5 +1,5 @@
 ---
-title: nodd community models
+title: Nodd community models
 emoji: 👋
 colorFrom: blue
 colorTo: gray
@@ -7,17 +7,17 @@ sdk: static
 app_file: index.html
 pinned: false
 license: mit
-short_description: Find and share small, open-source nodd models
+short_description: Find and share small, open-source Nodd models
 ---
 
-# nodd community models
+# Nodd community models
 
 A searchable catalog of small, open-source models you can download, reuse, and adapt.
 Models stay in their authors' Hugging Face repositories. This Space hosts the catalog.
 
 ## Add your model
 
-You don't need to join the nodd organization to propose a listing.
+You don't need to join the Nodd organization to propose a listing.
 
 1. Publish your nodd-compatible model in a **public Hugging Face model repository**.
    Include its ONNX export, tokenizer files, `nodd.json`, an open-source license,
@@ -59,7 +59,7 @@ help prepare the listing. A discussion alone does not publish a listing.
 
 ## Review
 
-Check that the model is public, the stated license permits reuse, its nodd export
+Check that the model is public, the stated license permits reuse, its Nodd export
 loads, and the model card explains its evaluation data and limitations. Listing a
 model is not a guarantee of accuracy. Scores from different tasks or datasets are
 not directly comparable, so this catalog is not a leaderboard.
@@ -70,7 +70,7 @@ catalog and search/sort behavior. This is a maintainer check, not an automatic g
 ## Development
 
 Plain HTML, CSS, and JavaScript; no build step, backend, or API token required.
-From a checkout of the nodd source repository:
+From a checkout of the Nodd source repository:
 
 ```sh
 python3 -m http.server 8080 --directory community

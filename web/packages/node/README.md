@@ -1,6 +1,6 @@
 # @nodd/node
 
-Run a [nodd](https://github.com/michaljach/nodd) model in Node with transformers.js on
+Run a [Nodd](https://github.com/quaedra/nodd) model in Node with transformers.js on
 onnxruntime-node (native CPU). Same API as [`@nodd/browser`](https://www.npmjs.com/package/@nodd/browser);
 the export folder is read from disk.
 

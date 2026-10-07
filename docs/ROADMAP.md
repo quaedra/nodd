@@ -1,4 +1,4 @@
-# nodd — Roadmap
+# Nodd — Roadmap
 
 Build in order. Each milestone ends with passing tests and a short summary.
 End goal: a task-specific model that runs in the browser (WASM/WebGPU).

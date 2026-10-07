@@ -1,6 +1,6 @@
 # @nodd/browser
 
-Run a [nodd](https://github.com/michaljach/nodd) model in the browser with transformers.js
+Run a [Nodd](https://github.com/quaedra/nodd) model in the browser with transformers.js
 (onnxruntime-web: WASM by default, WebGPU opt-in). Inference runs in a Web Worker; model files
 are cached with the Cache API, so a model loads offline after the first visit.
 

@@ -1,6 +1,6 @@
-# nodd web
+# Nodd web
 
-npm workspaces with the [nodd](../docs/SPEC.md) JavaScript packages and the demo site.
+npm workspaces with the [Nodd](../docs/SPEC.md) JavaScript packages and the demo site.
 
 | package | runs on | what it adds |
 |---|---|---|

@@ -3,7 +3,7 @@ import { page } from "../common";
 
 export type Page = "home" | "models" | "docs" | "bench" | "parity" | "model" | "train";
 
-/** The submenu under the title, the same on every nodd page. The model page belongs to Models. */
+/** The submenu under the title, the same on every Nodd page. The model page belongs to Models. */
 const MENU: [Page, string, string][] = [
   ["home", "Overview", page("")],
   ["train", "Train", page("train")],
@@ -18,7 +18,7 @@ const GLYPH = (
   </svg>
 );
 
-/** quaedra.com's page chrome: the site mark, the title and nodd's submenu, then the page and the site footer. */
+/** quaedra.com's page chrome: the site mark, the title and Nodd's submenu, then the page and the site footer. */
 export function Layout({ page: current, wide, lede, intro, children }: {
   page: Page;
   wide?: boolean;
@@ -32,9 +32,9 @@ export function Layout({ page: current, wide, lede, intro, children }: {
     <div className={wide ? "app wide" : "app"}>
       <header>
         <a className="crumb" href="/">{GLYPH}Quaedra Research</a>
-        <h1>nodd</h1>
+        <h1>Nodd</h1>
         {lede && <p className="lede">{lede}</p>}
-        <nav className="links" aria-label="nodd">
+        <nav className="links" aria-label="Nodd">
           {MENU.map(([p, label, href]) => (
             <a key={p} href={href} aria-current={p === section ? "page" : undefined}>{label}</a>
           ))}

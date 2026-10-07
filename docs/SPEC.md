@@ -1,9 +1,9 @@
-# nodd — Design Spec
+# Nodd — Design Spec
 
 ## 1. Goal
 
 A user describes **one decision** (input, allowed outputs, quality/latency
-target). nodd produces a **specialized micro model** for exactly that
+target). Nodd produces a **specialized micro model** for exactly that
 decision:
 
 - **tiny**: ~10–35 MB to download (target ~30 MB), runs in a browser (WASM,

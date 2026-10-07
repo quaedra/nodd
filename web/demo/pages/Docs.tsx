@@ -84,8 +84,8 @@ function Docs() {
   return (
     <Layout page="docs">
       <p>
-        nodd turns a task spec (an input and a fixed set of labels) into a small classifier for exactly that task.
-        A larger model labels examples, nodd trains and calibrates the smallest model that does the job well, and
+        Nodd turns a task spec (an input and a fixed set of labels) into a small classifier for exactly that task.
+        A larger model labels examples, Nodd trains and calibrates the smallest model that does the job well, and
         exports it as a folder the browser library loads. Every answer is one forward pass and always one of your labels.
       </p>
       <ul>

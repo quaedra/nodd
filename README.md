@@ -1,6 +1,6 @@
-<img src="web/public/logo.svg" alt="nodd logo" width="96">
+<img src="web/public/logo.svg" alt="Nodd logo" width="96">
 
-# nodd
+# Nodd
 
 Turn one decision ("is this comment ok, spam or toxic?") into a **tiny, calibrated
 classifier that runs in the browser** — ~10–35 MB, offline, no per-call cost — and
@@ -117,5 +117,5 @@ through the [Hugging Face community Space](https://huggingface.co/spaces/nodd-re
 
 ## License
 
-The nodd source code is licensed under the [MIT License](LICENSE).
+The Nodd source code is licensed under the [MIT License](LICENSE).
 Models and datasets have their own licenses; check each model or dataset card before reuse.

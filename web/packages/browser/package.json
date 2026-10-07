@@ -1,7 +1,7 @@
 {
   "name": "@nodd/browser",
   "version": "0.2.0",
-  "description": "Run nodd task-specific classifiers in the browser (transformers.js on onnxruntime-web, WASM or WebGPU).",
+  "description": "Run Nodd task-specific classifiers in the browser (transformers.js on onnxruntime-web, WASM or WebGPU).",
   "type": "module",
   "exports": {
     ".": {

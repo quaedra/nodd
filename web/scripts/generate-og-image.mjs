@@ -21,7 +21,7 @@ try {
       h1 { margin: 0; font-size: 88px; line-height: 1; font-weight: 700; }
       p { margin: 0; max-width: 930px; font-size: 42px; line-height: 1.4; }
     </style></head><body><main>
-      <div class="brand">${logo}<h1>nodd</h1></div>
+      <div class="brand">${logo}<h1>Nodd</h1></div>
       <p>Tiny, fast, free, use-case-specific decision models that can run in a browser.</p>
     </main></body></html>`);
   await page.screenshot({ path: new URL("../public/og-image.png", import.meta.url).pathname });
