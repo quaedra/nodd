@@ -27,7 +27,7 @@
     "url": "git+https://github.com/michaljach/nodd.git",
     "directory": "web/packages/node"
   },
-  "homepage": "https://michaljach.github.io/nodd/",
+  "homepage": "https://quaedra.com/nodd/app/",
   "publishConfig": {
     "access": "public"
   },

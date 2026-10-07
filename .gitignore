@@ -10,6 +10,8 @@ dist/
 web/public/models/
 web/public/ort/
 web/dist-demo/
+web/dist-site/
+web/.wrangler/
 web/dist/
 web/test-results/
 web/test/generated/

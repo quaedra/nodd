@@ -41,13 +41,14 @@ Artifact schemas are owned by Python and compiled for browser validation with
 `npm run schema`. See [the architecture notes](../docs/ARCHITECTURE.md) for module
 ownership, compatibility entry points, and regeneration commands.
 
-To deploy UI changes from a checkout without trained `runs/`, reuse the currently
-published model assets:
+The site is served from https://quaedra.com/nodd/app/ by a Cloudflare Worker
+(`wrangler.jsonc`, `worker/index.js`). To deploy UI changes from a checkout without trained
+`runs/`, reuse the archived model assets:
 
 ```sh
 git fetch origin gh-pages
-git archive origin/gh-pages models bases examples ort | tar -x -C public
-npm run deploy:pages -- --reuse-models
+git archive origin/gh-pages models ort training | tar -x -C public
+npm run deploy -- --reuse-models
 ```
 
 The default deployment command still syncs artifacts from local training runs.

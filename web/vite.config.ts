@@ -28,7 +28,7 @@ export default defineConfig({
   plugins: [react(), serveOrtRaw],
   // @nodd/* resolve to their TypeScript sources (packages/*/src), not dist/
   resolve: { conditions: ["@nodd/source", ...defaultClientConditions] },
-  // "/" locally; BASE=/nodd/ for GitHub Pages (scripts/deploy-pages.sh)
+  // "/" locally; BASE=/nodd/app/ for quaedra.com (scripts/deploy.sh)
   base: process.env.BASE ?? "/",
   root: "demo",
   publicDir: resolve(import.meta.dirname, "public"),
