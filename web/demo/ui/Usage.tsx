@@ -36,7 +36,7 @@ if (!m.isConfident(d)) { /* escalate to a bigger model */ }`,
     },
     {
       label: "Python",
-      install: "uv add git+https://github.com/michaljach/nodd",
+      install: "uv add git+https://github.com/quaedra/nodd",
       code: `from nodd.runtime import Runtime
 
 # the trained run folder (PyTorch)
