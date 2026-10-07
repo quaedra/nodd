@@ -1,7 +1,7 @@
 // Catalog entries from models/index.json (written by scripts/sync-model.mjs) with the card fields
 // the Repository and model pages show.
 import { useEffect, useState } from "react";
-import { type ModelEntry, modelIndex } from "./common";
+import { type ModelEntry, modelIndex, page } from "./common";
 
 export interface LabelMetrics {
   precision: number;
@@ -48,7 +48,7 @@ export const title = (task: string) => task.charAt(0).toUpperCase() + task.slice
 
 export const pct = (x: number | null | undefined, d = 1) => (x == null ? "—" : `${(x * 100).toFixed(d)}%`);
 
-export const modelPage = (m: ModelEntry) => `./model.html?model=${encodeURIComponent(m.path)}`;
+export const modelPage = (m: ModelEntry) => page("model", `?model=${encodeURIComponent(m.path)}`);
 
 /** Newest version first: v10 > v2 > v1. */
 export const byVersionDesc = (a: CatalogEntry, b: CatalogEntry) =>

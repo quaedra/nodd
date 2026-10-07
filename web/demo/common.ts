@@ -1,13 +1,16 @@
 import { parseModelConfig } from "@nodd/core";
 import type { Device, ModelConfig } from "@nodd/browser";
 
-/** Site root ("/" locally, "/nodd/" on GitHub Pages). Every asset URL goes through url(). */
+/** Site root ("/" locally, "/nodd/" on quaedra.com). Every asset URL goes through url(). */
 export const BASE = import.meta.env.BASE_URL;
 export const url = (path: string) => BASE + path.replace(/^\/+/, "");
+/** A page's address: clean URLs (/nodd/train) on quaedra.com, train.html on the dev server. */
+export const page = (name: string, query = "") =>
+  BASE + (name && import.meta.env.DEV ? `${name}.html` : name) + query;
 export const ORT_WASM = url("ort/");
 
 export const params = new URLSearchParams(location.search);
-export const MODEL_URL = params.get("model") ?? url("models/comment_moderation/v3");
+export const MODEL_URL = params.get("model") ?? url("models/comment_moderation/v4");
 
 export interface ModelEntry {
   id: string;

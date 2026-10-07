@@ -1,4 +1,5 @@
-// Serves quaedra.com/nodd/app/*. Static assets are matched first; this only runs on a miss.
+// Serves quaedra.com/nodd/*. Static assets are matched first; this only runs on a miss.
+// The pages used to live under /nodd/app/ with .html names; those addresses redirect to the new ones.
 // Workers assets cap files at 25 MiB, so scripts/deploy.sh splits larger files into
 // `<file>.part<N>` chunks plus `<file>.parts.json`; reassemble them here as one response.
 const ISOLATION = {
@@ -10,6 +11,12 @@ const ISOLATION = {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const old = url.pathname.match(/^\/nodd\/app(?:\/(.*))?$/);
+    if (old) {
+      const name = (old[1] ?? "").replace(/(^|\/)index\.html$/, "").replace(/\.html$/, "");
+      const target = { repository: "models" }[name] ?? name;
+      return Response.redirect(new URL(`/nodd/${target}${url.search}`, url), 301);
+    }
     if (request.method !== "GET" && request.method !== "HEAD") return env.ASSETS.fetch(request);
     const manifest = await env.ASSETS.fetch(new URL(url.pathname + ".parts.json", url));
     if (!manifest.ok) return env.ASSETS.fetch(request);

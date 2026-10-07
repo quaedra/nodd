@@ -6,8 +6,8 @@ Turn one decision ("is this comment ok, spam or toxic?") into a **tiny, calibrat
 classifier that runs in the browser** — ~10–35 MB, offline, no per-call cost — and
 knows when it is unsure, so the hard cases can go to a bigger model.
 
-**Live demo:** https://quaedra.com/nodd/app/ ·
-**Docs:** https://quaedra.com/nodd/app/docs.html
+**Website and demo:** https://quaedra.com/nodd ·
+**Docs:** https://quaedra.com/nodd/docs
 
 **Community models:** [Search the catalog on Hugging Face](https://huggingface.co/spaces/nodd-repo/community).
 Share your own model by submitting a listing through the Space's Community tab;
@@ -43,7 +43,7 @@ uv sync
 uv run nodd run examples/comment_moderation.yaml   # collect → label → train → eval → export
 uv run nodd compare runs/comment_moderation/v2 runs/comment_moderation/v3
 
-cd web && npm install && npm run sync-model && npm run dev # demo, repository, docs, benchmark, parity
+cd web && npm install && npm run sync-model && npm run dev # overview and demo, models, docs, train, benchmark, parity
 ```
 
 ```ts

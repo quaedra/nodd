@@ -28,7 +28,7 @@ export default defineConfig({
   plugins: [react(), serveOrtRaw],
   // @nodd/* resolve to their TypeScript sources (packages/*/src), not dist/
   resolve: { conditions: ["@nodd/source", ...defaultClientConditions] },
-  // "/" locally; BASE=/nodd/app/ for quaedra.com (scripts/deploy.sh)
+  // "/" locally; BASE=/nodd/ for quaedra.com (scripts/deploy.sh)
   base: process.env.BASE ?? "/",
   root: "demo",
   publicDir: resolve(import.meta.dirname, "public"),
@@ -46,7 +46,7 @@ export default defineConfig({
         bench: resolve(import.meta.dirname, "demo/bench.html"),
         parity: resolve(import.meta.dirname, "demo/parity.html"),
         docs: resolve(import.meta.dirname, "demo/docs.html"),
-        repository: resolve(import.meta.dirname, "demo/repository.html"),
+        models: resolve(import.meta.dirname, "demo/models.html"),
         model: resolve(import.meta.dirname, "demo/model.html"),
         train: resolve(import.meta.dirname, "demo/train.html"),
       },

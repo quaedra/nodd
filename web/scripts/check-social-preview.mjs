@@ -17,7 +17,7 @@ for (const name of pages) {
   assert.equal(tags.get("twitter:image"), tags.get("og:image"), name);
   const image = new URL(tags.get("og:image"));
   assert.equal(image.protocol, "https:", `${name}: image URL must be absolute HTTPS`);
-  assert.equal(image.pathname, "/nodd/app/og-image.png", name);
+  assert.equal(image.pathname, "/nodd/og-image.png", name);
 }
 const png = await readFile(resolve(directory, "og-image.png"));
 assert.equal(png.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "Invalid preview PNG");

@@ -1,4 +1,5 @@
 import { Layout } from "../ui/Layout";
+import { page } from "../common";
 import { mount } from "../ui/mount";
 
 const QUICKSTART = `uv sync                                   # Python 3.11+, managed with uv
@@ -82,7 +83,6 @@ const TOC: [string, string][] = [
 function Docs() {
   return (
     <Layout page="docs">
-      <h1>Docs</h1>
       <p>
         nodd turns a task spec (an input and a fixed set of labels) into a small classifier for exactly that task.
         A larger model labels examples, nodd trains and calibrates the smallest model that does the job well, and
@@ -98,7 +98,7 @@ function Docs() {
       <pre><code>{QUICKSTART}</code></pre>
       <p>
         The example specs in <code>examples/</code> (comment moderation, sentiment, support triage, prompt injection)
-        are available through the <a href="./repository.html">Community page</a>. Run artifacts go to{" "}
+        are available through the <a href={page("models")}>Models page</a>. Run artifacts go to{" "}
         <code>runs/&lt;task&gt;/&lt;version&gt;/</code>; the browser folder is <code>…/export</code>.
       </p>
 
@@ -172,7 +172,7 @@ function Docs() {
       </p>
 
       <h2 id="browser-training">Browser training</h2>
-      <p>The <a href="./train.html">Train page</a> fine-tunes every layer of a BERT/MiniLM encoder on your local
+      <p>The <a href={page("train")}>Train page</a> fine-tunes every layer of a BERT/MiniLM encoder on your local
         examples. A real forward/backward training step checks the selected model and settings before training
         is enabled. Automatic mode tries WebGPU, WebGL, then CPU. Reported memory is approximate; a successful
         check cannot guarantee that a long run will fit.</p>

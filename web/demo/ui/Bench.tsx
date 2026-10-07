@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { type BenchResult, type BenchRun, runBench } from "../bench";
-import { fmt } from "../common";
+import { fmt, page } from "../common";
 import { type ParityRun, MIN_AGREEMENT } from "../parity";
 
 const message = (err: unknown) => (err instanceof Error ? err.message : String(err));
@@ -111,7 +111,7 @@ export function BenchPanel({ model }: { model: string }) {
       <BenchTable results={results} />
       <div className="controls">
         <button onClick={run} disabled={running}>{running ? "Running…" : "Run in this browser"}</button>
-        <a href={`./bench.html?model=${encodeURIComponent(model)}`}>Open on its own page</a>
+        <a href={page("bench", `?model=${encodeURIComponent(model)}`)}>Open on its own page</a>
       </div>
     </>
   );

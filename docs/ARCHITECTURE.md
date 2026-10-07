@@ -42,7 +42,7 @@ See [browser training](BROWSER_TRAINING.md) for capabilities and limits.
 Clients infer their return types from the request rather than choosing arbitrary
 result types. Worker replies use the same protocol types.
 
-All seven HTML entries (index, repository, model, docs, bench, parity, train) contain only
+All seven HTML entries (index, models, model, docs, bench, parity, train) contain only
 metadata, styles, and a React root; layout and page titles are owned by React
 components. The only explicit document lookup in the demo is the root mount. Service workers and ML
 utilities remain ordinary JavaScript/TypeScript because they do not render UI.
@@ -96,5 +96,5 @@ npm run test:browser
 ```
 
 This uses the generated fixture model to exercise the model page (load, validate,
-classify) and renders the docs and repository pages. The existing `parity`,
+classify) and renders the docs and models pages. The existing `parity`,
 `bench`, and `offline` commands still cover real exported models; the tiny fixtures do not replace quality checks on those models.

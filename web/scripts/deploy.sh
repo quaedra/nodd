@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Build the demo and deploy it to https://quaedra.com/nodd/app/ (Cloudflare Worker, see wrangler.jsonc).
+# Build the site and deploy it to https://quaedra.com/nodd/ (Cloudflare Worker, see wrangler.jsonc).
 #   scripts/deploy.sh                 (from web/; needs exported models, see CLAUDE.md)
 #   scripts/deploy.sh --reuse-models  (use existing public/ artifacts without runs/)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-export BASE="/nodd/app/"
+export BASE="/nodd/"
 case "${1:-}" in
   "") node scripts/sync-model.mjs ;;
   --reuse-models)
@@ -27,10 +27,10 @@ done
 
 # The asset directory mirrors the URL path.
 rm -rf dist-site
-mkdir -p dist-site/nodd
-cp -R dist-demo dist-site/nodd/app
+mkdir -p dist-site
+cp -R dist-demo dist-site/nodd
 cat > dist-site/_headers <<'HEADERS'
-/nodd/app/*
+/nodd/*
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Resource-Policy: same-origin
@@ -55,4 +55,4 @@ for (const f of walk("dist-site")) {
 echo "site: $(du -sh dist-site | cut -f1)"
 
 npx wrangler deploy
-echo "deployed → https://quaedra.com/nodd/app/"
+echo "deployed → https://quaedra.com/nodd/"

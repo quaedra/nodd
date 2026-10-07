@@ -1,5 +1,5 @@
 // Offline acceptance check using the same generated fixtures as the contract tests: the model page
-// loads the Python-exported fixture encoder and matches Python's answers; docs and Community render.
+// loads the Python-exported fixture encoder and matches Python's answers; docs and Models render.
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -39,15 +39,15 @@ try {
 
   await page.goto(`${base}docs.html`);
   await page.waitForSelector("h1");
-  assert.equal(await page.title(), "nodd · Docs");
+  assert.equal(await page.title(), "Docs · nodd · Quaedra Research");
   assert.ok((await page.locator("h2").count()) >= 5, "docs sections");
 
-  await page.goto(`${base}repository.html`);
+  await page.goto(`${base}models.html`);
   await page.waitForSelector("h1");
-  assert.equal(await page.locator("nav b[aria-current=page]").textContent(), "Community");
+  assert.equal(await page.locator("nav a[aria-current=page]").textContent(), "Models");
 
   assert.deepEqual(errors, []);
-  console.log("Browser fixture check passed: model page loads the exported fixture encoder and matches Python; docs and Community render.");
+  console.log("Browser fixture check passed: model page loads the exported fixture encoder and matches Python; docs and Models render.");
 } finally {
   await browser?.close();
   await new Promise((resolve) => server.httpServer.close(resolve));

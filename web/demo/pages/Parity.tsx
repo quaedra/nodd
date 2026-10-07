@@ -21,8 +21,8 @@ function Parity() {
   }, []);
 
   return (
-    <Layout page="parity" model={MODEL_URL}>
-      <h1>Parity</h1>
+    <Layout page="parity">
+      <h2 className="title">Parity</h2>
       <p className="muted small">{run ? <>{MODEL_URL} · <ParitySummary run={run} /></> : error || "running…"}</p>
       {run && <ParityTable run={run} />}
     </Layout>

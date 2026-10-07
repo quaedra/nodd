@@ -1,5 +1,5 @@
 import { type CatalogEntry, catalogOf, pct, title, useModels } from "../catalog";
-import { MODEL_URL } from "../common";
+import { MODEL_URL, page } from "../common";
 import { Classifier } from "../ui/Classifier";
 import { Layout } from "../ui/Layout";
 import { mount } from "../ui/mount";
@@ -72,8 +72,8 @@ function Card({ m }: { m: CatalogEntry }) {
       <UsageTabs usages={usages} />
       <p className="small">
         <a href={`${m.path}/report.md`}>Full evaluation report</a> ·{" "}
-        <a href={`./bench.html?model=${encodeURIComponent(m.path)}`}>Benchmark this model</a> ·{" "}
-        <a href={`./parity.html?model=${encodeURIComponent(m.path)}`}>Check parity</a>
+        <a href={page("bench", `?model=${encodeURIComponent(m.path)}`)}>Benchmark this model</a> ·{" "}
+        <a href={page("parity", `?model=${encodeURIComponent(m.path)}`)}>Check parity</a>
       </p>
     </>
   );
@@ -84,12 +84,12 @@ function Model() {
   const m = catalogOf(index).find((e) => e.path === MODEL_URL);
 
   return (
-    <Layout page="model" wide model={MODEL_URL}>
+    <Layout page="model">
       <title>{m ? `nodd · ${title(m.task)}` : "nodd · Model"}</title>
-      <p><a href="./repository.html">← Community</a></p>
+      <p><a href={page("models")}>← Models</a></p>
       {m ? (
         <>
-          <h1>{title(m.task)} <span className="muted">{m.version}</span></h1>
+          <h2 className="title">{title(m.task)} <span className="muted">{m.version}</span></h2>
           <p>{m.description}</p>
           <p className="muted small">
             {[m.id, m.base, Number.isFinite(m.downloadMB) ? `${m.downloadMB.toFixed(1)} MB` : null, `trained ${m.created.slice(0, 10)}`]
@@ -99,7 +99,7 @@ function Model() {
         </>
       ) : (
         <>
-          <h1>Model</h1>
+          <h2 className="title">Model</h2>
           {index && <p>{MODEL_URL} isn't in the model repository.</p>}
         </>
       )}

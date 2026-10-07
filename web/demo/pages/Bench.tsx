@@ -22,8 +22,8 @@ function Bench() {
   }, []);
 
   return (
-    <Layout page="bench" model={MODEL_URL}>
-      <h1>Benchmark</h1>
+    <Layout page="bench">
+      <h2 className="title">Benchmark</h2>
       <p className="muted small">{sub}</p>
       <BenchTable results={results} />
     </Layout>

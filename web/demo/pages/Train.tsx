@@ -82,7 +82,6 @@ function Train() {
     });
   }
   return <Layout page="train">
-    <h1>Train a model</h1>
     <p>Teach a small encoder your decision using labeled examples. Every encoder layer is fine-tuned on your device; your examples stay in this browser.</p>
     <p className="muted small">Experimental. Start with a small dataset and keep this tab open. Download your completed checkpoint before closing it.</p>
     <fieldset disabled={busy} className="training-fields">

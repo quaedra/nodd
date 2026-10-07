@@ -57,14 +57,14 @@ uv run nodd compare runs/comment_moderation/v2 runs/comment_moderation/v3
 
 cd web && npm install
 npm run sync-model               # copy every runs/*/v*/export + ORT wasm into public/, write models/index.json
-npm run dev                      # demo at /, /repository.html, /model.html?model=…, /docs.html, /bench.html, /parity.html
+npm run dev                      # site at /, /models.html, /model.html?model=…, /docs.html, /train.html, /bench.html, /parity.html
 npm test && npm run typecheck    # vitest (incl. @nodd/node parity vs Python) + tsc
 npm run build                    # tsc → packages/*/dist; publish: npm publish --workspaces (2FA: run in your own terminal)
 MODEL=/models/<task>/<version> npm run parity   # headless Chromium: labels vs Python ≥ 99.5%
 npm run bench                    # → export/bench.json; `nodd eval` adds it to report.md
 npm run offline                  # network cut: page + model reload from caches, still classifies
-npm run deploy                   # build for /nodd/app/, deploy to Cloudflare → quaedra.com/nodd/app/
-SITE=https://quaedra.com/nodd/app/ npm run parity   # run the browser checks against the live site
+npm run deploy                   # build for /nodd/, deploy to Cloudflare → quaedra.com/nodd/ (clean URLs; /nodd/app/* redirects)
+SITE=https://quaedra.com/nodd/ npm run parity   # run the browser checks against the live site
 ```
 
 ## Rules

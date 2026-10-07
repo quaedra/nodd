@@ -1,30 +1,15 @@
 import type { ReactNode } from "react";
+import { page } from "../common";
 
-export type Page = "home" | "repository" | "docs" | "bench" | "parity" | "model" | "train";
+export type Page = "home" | "models" | "docs" | "bench" | "parity" | "model" | "train";
 
-const NAV: [Page, string, string][] = [
-  ["train", "Train", "./train.html"],
-  ["repository", "Community", "./repository.html"],
-  ["docs", "Docs", "./docs.html"],
+/** The submenu under the title, the same on every nodd page. The model page belongs to Models. */
+const MENU: [Page, string, string][] = [
+  ["home", "Overview", page("")],
+  ["train", "Train", page("train")],
+  ["models", "Models", page("models")],
+  ["docs", "Docs", page("docs")],
 ];
-
-/** Nodding ball; the animation lives inside the SVG (and respects prefers-reduced-motion). */
-const LOGO = <img className="logo" src={`${import.meta.env.BASE_URL}logo.svg`} alt="" width={22} height={22} />;
-
-/** Checks that live in the footer; `model` carries ?model= over to them. */
-const FOOTER: [Page, string, string][] = [
-  ["bench", "Benchmark", "./bench.html"],
-  ["parity", "Parity", "./parity.html"],
-];
-
-function Links({ items, page, query = "" }: { items: [Page, string, string][]; page: Page; query?: string }) {
-  return items.map(([p, label, href], i) => (
-    <span key={p}>
-      {i > 0 && " · "}
-      {p === page ? <b aria-current="page">{label}</b> : <a href={href + query}>{label}</a>}
-    </span>
-  ));
-}
 
 /** The Quaedra Research mark, as on quaedra.com. */
 const GLYPH = (
@@ -33,32 +18,33 @@ const GLYPH = (
   </svg>
 );
 
-/** Site chrome, matching quaedra.com: breadcrumb, the app's pages, and the site footer. */
-export function Layout({ page, wide, model, children }: { page: Page; wide?: boolean; model?: string; children: ReactNode }) {
-  const query = model ? `?model=${encodeURIComponent(model)}` : "";
+/** quaedra.com's page chrome: the site mark, the title and nodd's submenu, then the page and the site footer. */
+export function Layout({ page: current, wide, lede, intro, children }: {
+  page: Page;
+  wide?: boolean;
+  lede?: ReactNode;
+  /** Shown in the header under the submenu, like the key figures on the overview. */
+  intro?: ReactNode;
+  children: ReactNode;
+}) {
+  const section = current === "model" ? "models" : current;
   return (
     <div className={wide ? "app wide" : "app"}>
-      <p className="crumb">
-        <a href="/">{GLYPH}Quaedra Research</a> / <a href="/nodd">nodd</a> / App
-      </p>
-      <nav aria-label="Main">
-        {page === "home" ? (
-          <b className="brand" aria-current="page">
-            {LOGO}Playground
-          </b>
-        ) : (
-          <a className="brand" href="./">
-            {LOGO}Playground
-          </a>
-        )}
-        {NAV.map(([p, label, href]) => (p === page ? <b key={p} aria-current="page">{label}</b> : <a key={p} href={href}>{label}</a>))}
-        <a href="https://github.com/quaedra/nodd">GitHub</a>
-      </nav>
-      {children}
+      <header>
+        <a className="crumb" href="/">{GLYPH}Quaedra Research</a>
+        <h1>nodd</h1>
+        {lede && <p className="lede">{lede}</p>}
+        <nav className="links" aria-label="nodd">
+          {MENU.map(([p, label, href]) => (
+            <a key={p} href={href} aria-current={p === section ? "page" : undefined}>{label}</a>
+          ))}
+          <a href="https://github.com/quaedra/nodd">GitHub</a>
+        </nav>
+        {intro}
+      </header>
+      <main>{children}</main>
       <footer>
-        <p>
-          © {new Date().getFullYear()} Quaedra Research · <Links items={FOOTER} page={page} query={query} />
-        </p>
+        <span>© {new Date().getFullYear()} Quaedra Research</span>
         <nav aria-label="Site">
           <a href="/contact">Contact</a>
           <a href="/terms">Terms</a>
