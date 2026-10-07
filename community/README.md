@@ -79,7 +79,7 @@ node --test community/catalog.test.mjs
 
 In a clone of the Space itself, run `python3 -m http.server 8080` from its root.
 
-Source lives in [michaljach/nodd](https://github.com/michaljach/nodd/tree/main/community).
+Source lives in [quaedra/nodd](https://github.com/quaedra/nodd/tree/main/community).
 **The live Space's `models.json` is authoritative for community submissions.** Before
 publishing app updates from GitHub, retrieve the latest catalog from this Space and
 preserve accepted submissions. Do not overwrite it with an older source snapshot.

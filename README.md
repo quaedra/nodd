@@ -107,7 +107,7 @@ Results and validation: [larger synthetic training report](docs/SYNTHETIC_TRAINI
 
 ## Contributing
 
-Bug reports, fixes, documentation, and new examples are welcome. [Open an issue](https://github.com/michaljach/nodd/issues)
+Bug reports, fixes, documentation, and new examples are welcome. [Open an issue](https://github.com/quaedra/nodd/issues)
 to report a problem or discuss an idea, or submit a pull request with a description of your changes
 and the checks you ran. Run `uv run pytest` for Python changes; see the [web development checks](web/README.md#development-checks)
 for browser and Node.js changes.
