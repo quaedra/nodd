@@ -18,7 +18,6 @@
     "parity": "node scripts/browser-check.mjs parity",
     "bench": "node scripts/browser-check.mjs bench",
     "offline": "node scripts/browser-check.mjs offline",
-    "deploy": "scripts/deploy.sh",
     "fixtures": "uv run --project .. python ../scripts/generate_fixtures.py",
     "pretest": "npm run fixtures && node scripts/generate-validator.mjs --check",
     "schema": "uv run --project .. python ../scripts/generate_fixtures.py --schema-only && node scripts/generate-validator.mjs",

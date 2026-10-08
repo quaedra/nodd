@@ -41,14 +41,9 @@ Artifact schemas are owned by Python and compiled for browser validation with
 `npm run schema`. See [the architecture notes](../docs/ARCHITECTURE.md) for module
 ownership, compatibility entry points, and regeneration commands.
 
-The site is served from https://quaedra.com/nodd/app/ by a Cloudflare Worker
-(`wrangler.jsonc`, `worker/index.js`). To deploy UI changes from a checkout without trained
-`runs/`, reuse the archived model assets:
-
-```sh
-git fetch origin gh-pages
-git archive origin/gh-pages models ort training | tar -x -C public
-npm run deploy -- --reuse-models
-```
-
-The default deployment command still syncs artifacts from local training runs.
+The public site at https://quaedra.com/nodd is built and deployed from the
+[quaedra/www](https://github.com/quaedra/www) repository, which carries its own copy of these
+pages (`src/nodd/`) and builds `@nodd/browser` and `@nodd/core` from this checkout. The demo here
+is the development and test harness: `npm run dev`, `parity`, `bench` and `offline` drive it.
+To publish new models, run `npm run sync-model` here, then `npm run sync-nodd` and
+`npm run deploy` in www.

@@ -63,7 +63,6 @@ npm run build                    # tsc → packages/*/dist; publish: npm publish
 MODEL=/models/<task>/<version> npm run parity   # headless Chromium: labels vs Python ≥ 99.5%
 npm run bench                    # → export/bench.json; `nodd eval` adds it to report.md
 npm run offline                  # network cut: page + model reload from caches, still classifies
-npm run deploy                   # build for /nodd/, deploy to Cloudflare → quaedra.com/nodd/ (clean URLs; /nodd/app/* redirects)
 SITE=https://quaedra.com/nodd/ npm run parity   # run the browser checks against the live site
 ```
 

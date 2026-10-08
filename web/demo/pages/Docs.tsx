@@ -236,7 +236,7 @@ function Docs() {
           <code>Cross-Origin-Embedder-Policy: require-corp</code> headers enable multi-threaded WASM.
         </li>
         <li>
-          This site is the <code>web/</code> demo deployed to Cloudflare: <code>npm run deploy</code>.
+          This site is built from the <a href="https://github.com/quaedra/www">quaedra/www</a> repository.
         </li>
       </ul>
 
